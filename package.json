@@ -1,0 +1,33 @@
+{
+  "name": "student-management",
+  "version": "1.0.0",
+  "description": "Complete student management application with Next.js",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.2.1",
+    "@types/node": "^25.3.2",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.27",
+    "bcryptjs": "^3.0.3",
+    "better-sqlite3": "^12.6.2",
+    "eslint": "^9.39.3",
+    "eslint-config-next": "^16.1.6",
+    "next": "^16.1.6",
+    "next-auth": "^4.24.13",
+    "postcss": "^8.5.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
