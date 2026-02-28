@@ -4,20 +4,35 @@
   "installCommand": "npm install",
   "framework": "nextjs",
   "regions": ["cdg1"],
-  "functions": {
-    "api/**": {
-      "memory": 1024
-    }
+  "serverless": {
+    "memory": 1024,
+    "maxDuration": 10
   },
   "env": {
     "NEXTAUTH_SECRET": {
       "description": "NextAuth secret for secure sessions",
-      "required": true,
-      "default": ""
+      "required": false
     },
     "NEXTAUTH_URL": {
       "description": "NextAuth URL for production",
       "required": false
+    },
+    "NODE_ENV": {
+      "description": "Node environment",
+      "required": false,
+      "default": "production"
     }
-  }
+  },
+  "crons": {
+    "/**": {
+      "path": "/api/health",
+      "schedule": "*/30 * * * *"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
 }
