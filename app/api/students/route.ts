@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getDatabase } from '../db/db';
 
-export async function GET(req: NextRequest) {
+export async function GET() {
   try {
     const db = getDatabase();
     const students = db.prepare('SELECT * FROM students').all();

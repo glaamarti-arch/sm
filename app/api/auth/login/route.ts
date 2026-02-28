@@ -7,6 +7,14 @@ interface LoginRequest {
   password: string;
 }
 
+interface User {
+  id: number;
+  username: string;
+  password: string;
+  email: string;
+  created_at: string;
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { username, password }: LoginRequest = await req.json();
@@ -19,7 +27,7 @@ export async function POST(req: NextRequest) {
     }
 
     const db = getDatabase();
-    const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username);
+    const user = db.prepare('SELECT * FROM users WHERE username = ?').get(username) as User | undefined;
 
     if (!user) {
       return NextResponse.json(
