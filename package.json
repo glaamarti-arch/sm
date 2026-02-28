@@ -1,6 +1,6 @@
 {
   "name": "student-management",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Complete student management application with Next.js",
   "private": true,
   "scripts": {
