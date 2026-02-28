@@ -3,11 +3,6 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["cdg1"],
-  "serverless": {
-    "memory": 1024,
-    "maxDuration": 10
-  },
   "env": {
     "NEXTAUTH_SECRET": {
       "description": "NextAuth secret for secure sessions",
@@ -22,17 +17,5 @@
       "required": false,
       "default": "production"
     }
-  },
-  "crons": {
-    "/**": {
-      "path": "/api/health",
-      "schedule": "*/30 * * * *"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  }
 }
