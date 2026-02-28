@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Student Management System',
-  description: 'A complete student management application',
+  description: 'A modern and professional student management application',
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-50">{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }
