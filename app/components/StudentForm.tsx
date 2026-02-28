@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useToast } from './Toast';
 
 interface Student {
   id: number;
@@ -33,6 +34,7 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const { addToast } = useToast();
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -64,13 +66,21 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
       const data = await res.json();
 
       if (!res.ok) {
-        setError(data.error || 'Failed to save student');
+        const errorMsg = data.error || 'Failed to save student';
+        setError(errorMsg);
+        addToast(errorMsg, 'error');
         return;
       }
 
+      const message = student 
+        ? `${formData.firstName} ${formData.lastName} updated successfully!`
+        : `${formData.firstName} ${formData.lastName} added successfully!`;
+      addToast(message, 'success');
       onSuccess();
     } catch (err: any) {
-      setError(err.message || 'An error occurred');
+      const errorMsg = err.message || 'An error occurred';
+      setError(errorMsg);
+      addToast(errorMsg, 'error');
     } finally {
       setLoading(false);
     }
