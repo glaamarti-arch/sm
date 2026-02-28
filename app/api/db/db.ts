@@ -6,12 +6,18 @@ import bcrypt from 'bcryptjs';
 let db: Database.Database;
 
 export function initializeDatabase() {
-  const dbPath = path.join(process.cwd(), 'data', 'students.db');
+  // Use /tmp on Vercel (serverless), use ./data locally
+  const isProduction = process.env.NODE_ENV === 'production';
+  const dbPath = isProduction 
+    ? path.join('/tmp', 'students.db')
+    : path.join(process.cwd(), 'data', 'students.db');
   
-  // Create data directory if it doesn't exist
-  const dataDir = path.dirname(dbPath);
-  if (!fs.existsSync(dataDir)) {
-    fs.mkdirSync(dataDir, { recursive: true });
+  // Create data directory if it doesn't exist (not needed for /tmp)
+  if (!isProduction) {
+    const dataDir = path.dirname(dbPath);
+    if (!fs.existsSync(dataDir)) {
+      fs.mkdirSync(dataDir, { recursive: true });
+    }
   }
 
   db = new Database(dbPath);
