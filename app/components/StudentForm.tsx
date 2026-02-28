@@ -78,166 +78,177 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* Form Section Title */}
-      <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <p className="text-sm font-medium text-gray-700">Personal Information</p>
-      </div>
+      {/* Personal Information Section */}
+      <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-5 border border-blue-100">
+        <div className="section-header">
+          <svg className="section-header-icon" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+          </svg>
+          <h3 className="section-header-title">Personal Information</h3>
+        </div>
 
-      {/* Name Row */}
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="firstName" className="block text-sm font-semibold text-gray-700 mb-2">
-            First Name <span className="text-red-500">*</span>
+        {/* Name Row */}
+        <div className="grid grid-cols-2 gap-4">
+          <div className="form-group">
+            <label htmlFor="firstName" className="block text-sm font-bold text-gray-700 mb-2.5">
+              First Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="firstName"
+              type="text"
+              name="firstName"
+              value={formData.firstName}
+              onChange={handleChange}
+              placeholder="John"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="lastName" className="block text-sm font-bold text-gray-700 mb-2.5">
+              Last Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              id="lastName"
+              type="text"
+              name="lastName"
+              value={formData.lastName}
+              onChange={handleChange}
+              placeholder="Doe"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
+              required
+            />
+          </div>
+        </div>
+
+        {/* Email */}
+        <div className="form-group">
+          <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-2.5">
+            Email Address <span className="text-red-500">*</span>
           </label>
           <input
-            id="firstName"
-            type="text"
-            name="firstName"
-            value={formData.firstName}
+            id="email"
+            type="email"
+            name="email"
+            value={formData.email}
             onChange={handleChange}
-            placeholder="John"
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+            placeholder="john.doe@example.com"
+            className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
             required
           />
         </div>
+      </div>
 
-        <div>
-          <label htmlFor="lastName" className="block text-sm font-semibold text-gray-700 mb-2">
-            Last Name <span className="text-red-500">*</span>
+      {/* Contact & Location Section */}
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 rounded-lg p-5 border border-amber-100">
+        <div className="section-header">
+          <svg className="section-header-icon" style={{color: '#d97706'}} fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.418 1.265 1.217 2.541 2.57 3.891 1.353-1.35 2.152-2.626 2.57-3.891l-1.548-.773a1 1 0 01-.54-1.06l.74-4.435A1 1 0 0110.153 2h2.153a1 1 0 011 1v2a1 1 0 11-2 0V4h-.382l-.553 3.276a1 1 0 01-.986.724H8.987a1 1 0 01-.986-.724L7.468 4H7a1 1 0 110-2h2a1 1 0 011 1v10a1 1 0 11-2 0v-10z" />
+          </svg>
+          <h3 className="section-header-title">Contact & Location</h3>
+        </div>
+
+        <div className="grid grid-cols-2 gap-4">
+          <div className="form-group">
+            <label htmlFor="phone" className="block text-sm font-bold text-gray-700 mb-2.5">
+              📱 Phone Number
+            </label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="+1 (555) 000-0000"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="dateOfBirth" className="block text-sm font-bold text-gray-700 mb-2.5">
+              🎂 Date of Birth
+            </label>
+            <input
+              id="dateOfBirth"
+              type="date"
+              name="dateOfBirth"
+              value={formData.dateOfBirth}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
+            />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="address" className="block text-sm font-bold text-gray-700 mb-2.5">
+            📍 Street Address
           </label>
           <input
-            id="lastName"
+            id="address"
             type="text"
-            name="lastName"
-            value={formData.lastName}
+            name="address"
+            value={formData.address}
             onChange={handleChange}
-            placeholder="Doe"
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-            required
+            placeholder="123 Main Street, City, State 12345"
+            className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
           />
         </div>
       </div>
 
-      {/* Email */}
-      <div>
-        <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-          Email <span className="text-red-500">*</span>
-        </label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="john.doe@example.com"
-          className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-          required
-        />
-      </div>
-
-      {/* Contact Section */}
-      <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-        <p className="text-sm font-medium text-gray-700">Contact & Location</p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-            Phone
-          </label>
-          <input
-            id="phone"
-            type="tel"
-            name="phone"
-            value={formData.phone}
-            onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-          />
+      {/* Academic Information Section */}
+      <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-5 border border-green-100">
+        <div className="section-header">
+          <svg className="section-header-icon" style={{color: '#059669'}} fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+          </svg>
+          <h3 className="section-header-title">Academic Information</h3>
         </div>
 
-        <div>
-          <label htmlFor="dateOfBirth" className="block text-sm font-semibold text-gray-700 mb-2">
-            Date of Birth
-          </label>
-          <input
-            id="dateOfBirth"
-            type="date"
-            name="dateOfBirth"
-            value={formData.dateOfBirth}
-            onChange={handleChange}
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-          />
-        </div>
-      </div>
+        <div className="grid grid-cols-2 gap-4">
+          <div className="form-group">
+            <label htmlFor="major" className="block text-sm font-bold text-gray-700 mb-2.5">
+              🎓 Major / Program
+            </label>
+            <input
+              id="major"
+              type="text"
+              name="major"
+              value={formData.major}
+              onChange={handleChange}
+              placeholder="Computer Science"
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200"
+            />
+          </div>
 
-      <div>
-        <label htmlFor="address" className="block text-sm font-semibold text-gray-700 mb-2">
-          Address
-        </label>
-        <input
-          id="address"
-          type="text"
-          name="address"
-          value={formData.address}
-          onChange={handleChange}
-          placeholder="123 Main Street, City, State"
-          className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-        />
-      </div>
-
-      {/* Academic Section */}
-      <div className="flex items-center gap-3 pb-4 border-b border-gray-200">
-        <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C6.228 6.228 2 10.228 2 15s4.228 8.772 10 8.772 10-4.228 10-8.772c0-4.772-4.228-8.747-10-8.747z" />
-        </svg>
-        <p className="text-sm font-medium text-gray-700">Academic Information</p>
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label htmlFor="major" className="block text-sm font-semibold text-gray-700 mb-2">
-            Major
-          </label>
-          <input
-            id="major"
-            type="text"
-            name="major"
-            value={formData.major}
-            onChange={handleChange}
-            placeholder="Computer Science"
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="status" className="block text-sm font-semibold text-gray-700 mb-2">
-            Status
-          </label>
-          <select
-            id="status"
-            name="status"
-            value={formData.status}
-            onChange={handleChange}
-            className="w-full px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
-          >
-            <option value="active">Active</option>
-            <option value="inactive">Inactive</option>
-            <option value="graduated">Graduated</option>
-          </select>
+          <div className="form-group">
+            <label htmlFor="status" className="block text-sm font-bold text-gray-700 mb-2.5">
+              📊 Enrollment Status
+            </label>
+            <select
+              id="status"
+              name="status"
+              value={formData.status}
+              onChange={handleChange}
+              className="w-full px-4 py-3 bg-white border-2 border-gray-200 rounded-lg text-gray-900 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200 font-medium"
+            >
+              <option value="active">✅ Active</option>
+              <option value="inactive">⏸️ Inactive</option>
+              <option value="graduated">🎉 Graduated</option>
+            </select>
+          </div>
         </div>
       </div>
 
       {/* Error Message */}
       {error && (
-        <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-          <p className="text-red-800 text-sm font-medium">{error}</p>
+        <div className="alert alert-error animate-slideInDown">
+          <div className="flex items-start gap-3">
+            <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm font-medium">{error}</p>
+          </div>
         </div>
       )}
 
@@ -245,16 +256,19 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-        style={{background: loading ? '' : 'linear-gradient(to right, #2563eb, #1d4ed8)'}}
+        className="w-full px-6 py-4 text-white font-bold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md text-lg tracking-wide flex items-center justify-center gap-2"
+        style={{
+          background: loading ? '#cbd5e0' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.1)' : '0 4px 15px rgba(102, 126, 234, 0.4)'
+        }}
       >
         {loading && (
-          <svg className="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
           </svg>
         )}
-        {loading ? 'Saving...' : 'Save Student'}
+        <span>{loading ? 'Saving Student...' : '💾 Save Student'}</span>
       </button>
     </form>
   );

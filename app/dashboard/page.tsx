@@ -45,28 +45,38 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50" style={{backgroundImage: 'linear-gradient(to bottom right, #f9fafb, #f3f4f6)'}}>
+    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'}}>
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg text-white flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, #3b82f6, #4f46e5)'}}>
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
+      <header className="bg-white/95 backdrop-blur-lg border-b border-gray-200 sticky top-0 z-50 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <div 
+              className="w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg"
+              style={{background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}
+            >
+              📚
             </div>
             <div>
-              <h1 className="text-2xl font-bold mb-2" style={{backgroundImage: 'linear-gradient(to right, #2563eb, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
-                Dashboard
+              <h1 className="text-3xl font-black mb-1" style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                Student Hub
               </h1>
-              <p className="text-xs text-gray-600">Student Management System</p>
+              <p className="text-xs font-semibold text-gray-600 tracking-wider uppercase">Management System</p>
             </div>
           </div>
           <button
             onClick={handleLogout}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-red-50 text-red-600 rounded-lg hover:bg-red-100 border border-red-200 transition-all duration-200 font-medium text-sm"
+            className="inline-flex items-center gap-2 px-6 py-3 text-white font-bold rounded-lg hover:shadow-lg transition-all duration-200 text-sm"
+            style={{
+              background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
+              boxShadow: '0 4px 15px rgba(239, 68, 68, 0.3)'
+            }}
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
             </svg>
             Sign Out
@@ -77,29 +87,34 @@ export default function Dashboard() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Quick Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          {/* System Status Card */}
+          <div className="bg-white rounded-xl shadow-md border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm font-medium">System Status</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">Operational</p>
+                <p className="text-gray-600 text-sm font-bold tracking-wide uppercase">📊 System Status</p>
+                <p className="text-4xl font-black text-gray-900 mt-2">Operational</p>
+                <p className="text-xs text-gray-500 mt-1">All systems running smoothly</p>
               </div>
-              <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
-                <svg className="w-6 h-6 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-100 to-green-100 flex items-center justify-center shadow-lg">
+                <svg className="w-8 h-8 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
               </div>
             </div>
           </div>
-          <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200">
+
+          {/* Database Status Card */}
+          <div className="bg-white rounded-xl shadow-md border border-gray-200 p-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-gray-600 text-sm font-medium">Database</p>
-                <p className="text-2xl font-bold text-gray-900 mt-1">SQLite Active</p>
+                <p className="text-gray-600 text-sm font-bold tracking-wide uppercase">🗄️ Database</p>
+                <p className="text-4xl font-black text-gray-900 mt-2">SQLite</p>
+                <p className="text-xs text-gray-500 mt-1">Active and responsive</p>
               </div>
-              <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
-                <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10a2 2 0 002 2h12a2 2 0 002-2V9a2 2 0 00-2-2h-6.586L9.172 4.172A2 2 0 007.586 4H4a2 2 0 00-2 2z" />
+              <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 flex items-center justify-center shadow-lg">
+                <svg className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M3 12a9 9 0 010-18 9.75 9.75 0 016.74 2.74L21 8" />
                 </svg>
               </div>
             </div>
@@ -110,14 +125,17 @@ export default function Dashboard() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Form Section */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden sticky top-24">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden sticky top-24">
               {/* Form Header */}
-              <div className="p-6 text-white flex items-center gap-2" style={{background: 'linear-gradient(to right, #3b82f6, #4f46e5)'}}>
-                <h2 className="text-lg font-bold text-white flex items-center gap-2">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                  </svg>
-                  {selectedStudent ? 'Edit Student Record' : 'Add New Student'}
+              <div 
+                className="p-6 text-white flex items-center gap-3"
+                style={{background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}
+              >
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+                </svg>
+                <h2 className="text-lg font-bold">
+                  {selectedStudent ? '✏️ Edit Student' : '➕ Add Student'}
                 </h2>
               </div>
 
@@ -131,9 +149,9 @@ export default function Dashboard() {
                     />
                     <button
                       onClick={handleAddNew}
-                      className="w-full mt-6 px-4 py-3 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center gap-2"
+                      className="w-full mt-6 px-6 py-3 bg-gray-100 text-gray-800 font-bold rounded-lg hover:bg-gray-200 transition-all duration-200 flex items-center justify-center gap-2 border border-gray-300"
                     >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                       </svg>
                       Cancel
@@ -142,10 +160,10 @@ export default function Dashboard() {
                 ) : (
                   <button
                     onClick={handleAddNew}
-                    className="w-full px-4 py-3 text-white font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-                    style={{background: 'linear-gradient(to right, #2563eb, #1d4ed8)'}}
+                    className="w-full px-6 py-4 text-white font-bold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-lg"
+                    style={{background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'}}
                   >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
                     Add New Student
@@ -157,7 +175,7 @@ export default function Dashboard() {
 
           {/* Students List Section */}
           <div className="lg:col-span-2">
-            <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden">
               <div className="p-6">
                 <StudentList 
                   onEdit={handleEdit}
@@ -166,6 +184,14 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Footer Info */}
+        <div className="mt-12 p-6 bg-white/80 backdrop-blur rounded-xl border border-gray-200 text-center">
+          <p className="text-gray-600 text-sm">
+            <span className="font-bold">💡 Pro Tip:</span> All student data is securely stored in SQLite. 
+            Use the form on the left to manage your student records efficiently.
+          </p>
         </div>
       </main>
     </div>

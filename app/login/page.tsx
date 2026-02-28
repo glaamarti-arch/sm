@@ -2,38 +2,91 @@ import LoginForm from '@/app/components/LoginForm';
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4" style={{backgroundImage: 'linear-gradient(to bottom right, #1f2937 0%, #1e3a8a 50%, #312e81 100%)'}}>
-      {/* Background elements */}
+    <div 
+      className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
+      style={{
+        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%)',
+        backgroundSize: '400% 400%',
+        animation: 'gradientShift 15s ease infinite'
+      }}
+    >
+      <style>{`
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+      `}</style>
+
+      {/* Animated Background Blobs */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-        <div className="absolute -bottom-8 left-20 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-4000"></div>
+        <div 
+          className="absolute top-10 -left-24 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          style={{
+            background: 'linear-gradient(135deg, #667eea, #764ba2)',
+            animation: 'blob 7s infinite'
+          }}
+        ></div>
+        <div 
+          className="absolute -top-32 right-0 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          style={{
+            background: 'linear-gradient(135deg, #f093fb, #f5576c)',
+            animation: 'blob 7s infinite 2s'
+          }}
+        ></div>
+        <div 
+          className="absolute -bottom-32 left-1/3 w-96 h-96 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
+          style={{
+            background: 'linear-gradient(135deg, #4facfe, #00f2fe)',
+            animation: 'blob 7s infinite 4s'
+          }}
+        ></div>
       </div>
 
-      {/* Login Card */}
-      <div className="relative w-full max-w-md">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-2xl blur opacity-20"></div>
-        <div className="relative bg-white/95 backdrop-blur rounded-2xl shadow-2xl p-8 border border-white/20">
+      {/* Main Login Card */}
+      <div className="relative w-full max-w-md z-10">
+        {/* Glow Effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-3xl blur-2xl opacity-40 animate-pulse"></div>
+
+        {/* Card Content */}
+        <div className="relative bg-white/98 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/30">
           {/* Header */}
           <div className="mb-8 text-center">
-            <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-lg mb-4">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
-              </svg>
+            <div className="flex justify-center mb-4">
+              <div 
+                className="w-16 h-16 rounded-2xl flex items-center justify-center text-white text-2xl font-bold shadow-lg"
+                style={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+                }}
+              >
+                📚
+              </div>
             </div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent mb-2">
-              Student Management
+            <h1 className="text-4xl font-bold mb-2 flex items-center justify-center gap-2">
+              <span style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}>
+                Student Hub
+              </span>
             </h1>
-            <p className="text-gray-600 text-sm">Welcome back! Please sign in to your account</p>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              Manage your student records with ease. Secure and professional.
+            </p>
           </div>
+
+          {/* Divider */}
+          <div className="mb-6 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
 
           {/* Form */}
           <LoginForm />
 
-          {/* Footer */}
-          <div className="mt-6 pt-6 border-t border-gray-200">
-            <p className="text-center text-xs text-gray-600">
-              This is a demo application. Use the provided credentials.
+          {/* Footer Message */}
+          <div className="mt-8 pt-6 border-t border-gray-100">
+            <p className="text-center text-xs text-gray-500 px-2">
+              🔒 Your data is secure. Built with modern security standards.
             </p>
           </div>
         </div>

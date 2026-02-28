@@ -39,7 +39,7 @@ export default function LoginForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      <div>
+      <div className="form-group">
         <label htmlFor="username" className="block text-sm font-semibold text-gray-700 mb-2">
           Username
         </label>
@@ -48,12 +48,13 @@ export default function LoginForm() {
           type="text"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          placeholder="Enter your username"
+          className="w-full px-5 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200 font-medium"
           required
         />
       </div>
 
-      <div>
+      <div className="form-group">
         <label htmlFor="password" className="block text-sm font-semibold text-gray-700 mb-2">
           Password
         </label>
@@ -62,42 +63,64 @@ export default function LoginForm() {
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200"
+          placeholder="Enter your password"
+          className="w-full px-5 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200 font-medium"
           required
         />
       </div>
 
       {error && (
-        <div className="p-4 bg-red-50 border-l-4 border-red-500 rounded-lg">
-          <p className="text-red-800 text-sm font-medium">{error}</p>
+        <div className="alert alert-error animate-slideInDown">
+          <div className="flex items-start gap-3">
+            <svg className="w-5 h-5 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+            </svg>
+            <p className="text-sm font-medium">{error}</p>
+          </div>
         </div>
       )}
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-        <p className="text-xs font-semibold text-blue-900 mb-2">Demo Credentials</p>
-        <p className="text-sm text-blue-800">
-          <span className="font-mono">admin</span> / <span className="font-mono">admin123</span>
-        </p>
+      <div className="alert alert-info" style={{background: '#f0f9ff', borderLeftColor: '#06b6d4'}}>
+        <div className="flex items-start gap-3">
+          <svg className="w-5 h-5 mt-0.5 flex-shrink-0" style={{color: '#0891b2'}} fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zM8 7a1 1 0 000 2h6a1 1 0 000-2H8zm0 4a1 1 0 000 2h3a1 1 0 000-2H8z" clipRule="evenodd" />
+          </svg>
+          <div>
+            <p className="text-sm font-bold" style={{color: '#155e75'}}>Demo Credentials</p>
+            <p className="text-sm mt-1" style={{color: '#164e63'}}>
+              <code className="bg-white px-2 py-1 rounded text-gray-800 font-mono text-xs font-bold">admin</code> / <code className="bg-white px-2 py-1 rounded text-gray-800 font-mono text-xs font-bold">admin123</code>
+            </p>
+          </div>
+        </div>
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed transition-all duration-200 shadow-md hover:shadow-lg"
-        style={{background: loading ? '' : 'linear-gradient(to right, #2563eb, #1d4ed8)'}}
+        className="w-full px-6 py-4 text-white font-bold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md text-lg tracking-wide"
+        style={{
+          background: loading ? '#cbd5e0' : 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.1)' : '0 4px 15px rgba(102, 126, 234, 0.4)'
+        }}
       >
         {loading ? (
-          <span className="flex items-center justify-center">
-            <svg className="animate-spin -ml-1 mr-3 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <span className="flex items-center justify-center gap-2">
+            <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
-            Logging in...
+            <span>Signing in...</span>
           </span>
         ) : (
-          'Sign In'
+          <>
+            <span>🔐</span> Sign In
+          </>
         )}
       </button>
+
+      <p className="text-center text-xs text-gray-500 mt-6">
+        Protected by secure authentication
+      </p>
     </form>
   );
 }
