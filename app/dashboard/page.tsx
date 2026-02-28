@@ -45,18 +45,18 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <div className="min-h-screen bg-gray-50" style={{backgroundImage: 'linear-gradient(to bottom right, #f9fafb, #f3f4f6)'}}>
       {/* Header */}
       <header className="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-lg text-white flex items-center justify-center" style={{background: 'linear-gradient(to bottom right, #3b82f6, #4f46e5)'}}>
               <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
               </svg>
             </div>
             <div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-bold mb-2" style={{backgroundImage: 'linear-gradient(to right, #2563eb, #4f46e5)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text'}}>
                 Dashboard
               </h1>
               <p className="text-xs text-gray-600">Student Management System</p>
@@ -112,7 +112,7 @@ export default function Dashboard() {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden sticky top-24">
               {/* Form Header */}
-              <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-6">
+              <div className="p-6 text-white flex items-center gap-2" style={{background: 'linear-gradient(to right, #3b82f6, #4f46e5)'}}>
                 <h2 className="text-lg font-bold text-white flex items-center gap-2">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
@@ -142,7 +142,8 @@ export default function Dashboard() {
                 ) : (
                   <button
                     onClick={handleAddNew}
-                    className="w-full px-4 py-3 bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-blue-800 transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                    className="w-full px-4 py-3 text-white font-semibold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                    style={{background: 'linear-gradient(to right, #2563eb, #1d4ed8)'}}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />

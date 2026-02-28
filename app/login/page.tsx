@@ -2,7 +2,7 @@ import LoginForm from '@/app/components/LoginForm';
 
 export default function LoginPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4" style={{backgroundImage: 'linear-gradient(to bottom right, #1f2937 0%, #1e3a8a 50%, #312e81 100%)'}}>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 -right-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>

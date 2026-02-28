@@ -126,7 +126,7 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
         <table className="w-full">
           {/* Table Head */}
           <thead>
-            <tr className="bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+            <tr className="bg-gray-50 border-b border-gray-200">
               <th className="px-6 py-3 text-left">
                 <span className="text-xs font-bold uppercase tracking-wider text-gray-700">Name</span>
               </th>
@@ -154,7 +154,7 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
               <tr key={student.id} className={`transition-all duration-200 hover:bg-blue-50 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}>
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
-                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center text-white font-semibold text-sm">
+                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-semibold text-sm" style={{background: 'linear-gradient(to right, #3b82f6, #4f46e5)'}}>
                       {student.firstName[0]}{student.lastName[0]}
                     </div>
                     <div>
