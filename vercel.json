@@ -3,19 +3,5 @@
   "outputDirectory": ".next",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "env": {
-    "NEXTAUTH_SECRET": {
-      "description": "NextAuth secret for secure sessions",
-      "required": false
-    },
-    "NEXTAUTH_URL": {
-      "description": "NextAuth URL for production",
-      "required": false
-    },
-    "NODE_ENV": {
-      "description": "Node environment",
-      "required": false,
-      "default": "production"
-    }
-  }
+  "regions": ["cdg1"]
 }
