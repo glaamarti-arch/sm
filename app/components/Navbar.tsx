@@ -19,8 +19,8 @@ export default function Navbar({ onSidebarToggle }: NavbarProps) {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-xl border-b transition-all duration-300"
       style={{
-        background: 'rgba(255, 255, 255, 0.9)',
-        borderColor: 'rgba(233, 30, 99, 0.15)'
+        background: 'linear-gradient(90deg, #fff5fb 0%, #fce7f3 100%)',
+        borderColor: '#fbcfe8'
       }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -29,19 +29,19 @@ export default function Navbar({ onSidebarToggle }: NavbarProps) {
           <div className="flex items-center gap-3">
             <button
               onClick={onSidebarToggle}
-              className="p-2 rounded-lg lg:hidden transition-all duration-200 hover:bg-slate-200/50"
+              className="p-2 rounded-lg lg:hidden transition-all duration-200 hover:bg-pink-100"
               aria-label="Toggle sidebar"
             >
-              <svg className="w-6 h-6" style={{color: '#E91E63'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6" style={{color: '#ec4899'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             </button>
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-                style={{background: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)'}}>           
+                style={{background: 'linear-gradient(135deg, #ec4899 0%, #c084fc 100%)'}}>
                 📚
               </div>
-              <h1 className="text-xl font-bold hidden sm:block" style={{color: '#E91E63'}}>
+              <h1 className="text-xl font-bold hidden sm:block" style={{color: '#ec4899'}}>
                 StudentHub
               </h1>
             </div>
@@ -51,8 +51,8 @@ export default function Navbar({ onSidebarToggle }: NavbarProps) {
           <div className="flex items-center gap-4">
             {/* Notification Icon */}
             <button 
-              className="p-2 rounded-lg transition-all duration-200 hover:bg-slate-200/50 hidden sm:flex items-center gap-2"
-              style={{color: '#E91E63'}}
+              className="p-2 rounded-lg transition-all duration-200 hover:bg-pink-100 hidden sm:flex items-center gap-2"
+              style={{color: '#be185d'}}
               aria-label="Notifications"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,15 +64,15 @@ export default function Navbar({ onSidebarToggle }: NavbarProps) {
             <div className="relative">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-slate-200/50"
-                style={{color: '#424242'}}
+                className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 hover:bg-pink-100"
+                style={{color: '#6b3aa0'}}
                 aria-label="User menu"
               >
                 <div className="w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm text-white"
-                  style={{background: 'linear-gradient(135deg, #E91E63 0%, #F06292 100%)'}}>         
+                  style={{background: 'linear-gradient(135deg, #ec4899 0%, #c084fc 100%)'}}>
                   A
                 </div>
-                <svg className="w-4 h-4 hidden sm:block" style={{color: '#E91E63'}} fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 hidden sm:block" style={{color: '#be185d'}} fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
               </button>
@@ -80,11 +80,11 @@ export default function Navbar({ onSidebarToggle }: NavbarProps) {
               {/* Dropdown Menu */}
               {isMenuOpen && (
                 <div className="absolute right-0 mt-2 w-48 rounded-lg shadow-xl border"
-                  style={{background: 'rgba(255, 255, 255, 0.95)', borderColor: 'rgba(233, 30, 99, 0.15)'}}>
+                  style={{background: '#fff5fb', borderColor: '#fbcfe8'}}>
                   <button
                     onClick={() => { handleLogout(); setIsMenuOpen(false); }}
-                    className="w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-2 hover:bg-slate-700/50"
-                    style={{color: '#ef4444'}}
+                    className="w-full text-left px-4 py-3 rounded-lg transition-all duration-200 flex items-center gap-2 hover:bg-pink-100"
+                    style={{color: '#be185d'}}
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
