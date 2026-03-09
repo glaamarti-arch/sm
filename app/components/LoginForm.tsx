@@ -40,7 +40,7 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="form-group">
-        <label htmlFor="username" className="block text-sm font-bold text-cyan-300 mb-2.5">
+        <label htmlFor="username" className="block text-sm font-bold text-rose-500 mb-2.5">
           Username
         </label>
         <input
@@ -49,13 +49,13 @@ export default function LoginForm() {
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           placeholder="admin"
-          className="w-full px-5 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200 font-medium"
+          className="w-full px-5 py-3 bg-white border-2 border-rose-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-rose-400 focus:bg-rose-50 transition-all duration-200 font-medium"
           required
         />
       </div>
 
       <div className="form-group">
-        <label htmlFor="password" className="block text-sm font-bold text-cyan-300 mb-2.5">
+        <label htmlFor="password" className="block text-sm font-bold text-rose-500 mb-2.5">
           Password
         </label>
         <input
@@ -64,7 +64,7 @@ export default function LoginForm() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="••••••••"
-          className="w-full px-5 py-3 bg-white border-2 border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:bg-blue-50 transition-all duration-200 font-medium"
+          className="w-full px-5 py-3 bg-white border-2 border-rose-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-rose-400 focus:bg-rose-50 transition-all duration-200 font-medium"
           required
         />
       </div>
@@ -86,12 +86,12 @@ export default function LoginForm() {
             <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0zM8 7a1 1 0 000 2h6a1 1 0 000-2H8zm0 4a1 1 0 000 2h3a1 1 0 000-2H8z" clipRule="evenodd" />
           </svg>
           <div>
-            <p className="text-sm font-bold text-cyan-300">Demo Credentials</p>
-            <p className="text-sm mt-1 text-gray-300">
-              Username: <code className="bg-black/40 px-2 py-1 rounded text-cyan-300 font-mono text-xs font-bold">admin</code>
+            <p className="text-sm font-bold text-rose-500">Demo Credentials</p>
+            <p className="text-sm mt-1 text-gray-700">
+              Username: <code className="bg-rose-100 px-2 py-1 rounded text-rose-600 font-mono text-xs font-bold">admin</code>
             </p>
-            <p className="text-sm text-gray-300">
-              Password: <code className="bg-black/40 px-2 py-1 rounded text-cyan-300 font-mono text-xs font-bold">admin123</code>
+            <p className="text-sm text-gray-700">
+              Password: <code className="bg-rose-100 px-2 py-1 rounded text-rose-600 font-mono text-xs font-bold">admin123</code>
             </p>
           </div>
         </div>
@@ -102,8 +102,8 @@ export default function LoginForm() {
         disabled={loading}
         className="w-full px-6 py-4 text-white font-bold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md text-lg tracking-wide flex items-center justify-center gap-2"
         style={{
-          background: loading ? '#4b5563' : 'linear-gradient(135deg, #00d9ff 0%, #0099ff 50%, #6366f1 100%)',
-          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.3)' : '0 8px 32px rgba(0, 217, 255, 0.4)'
+          background: loading ? '#ccc' : 'linear-gradient(135deg, #E91E63 0%, #F06292 50%, #BA68C8 100%)',
+          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.1)' : '0 8px 32px rgba(233, 30, 99, 0.4)'
         }}
       >
         {loading ? (
@@ -121,7 +121,7 @@ export default function LoginForm() {
         )}
       </button>
 
-      <p className="text-center text-xs text-gray-500 mt-6">
+      <p className="text-center text-xs text-gray-600 mt-6">
         Protected by enterprise-grade security
       </p>
     </form>

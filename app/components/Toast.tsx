@@ -75,30 +75,30 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: (id: string) =
     switch (toast.type) {
       case 'success':
         return {
-          background: 'rgba(52, 211, 153, 0.15)',
-          borderColor: 'rgba(52, 211, 153, 0.3)',
-          textColor: '#34d399',
+          background: 'rgba(76, 175, 80, 0.1)',
+          borderColor: 'rgba(76, 175, 80, 0.3)',
+          textColor: '#4CAF50',
           icon: '✅'
         };
       case 'error':
         return {
-          background: 'rgba(239, 68, 68, 0.15)',
-          borderColor: 'rgba(239, 68, 68, 0.3)',
-          textColor: '#ef4444',
+          background: 'rgba(233, 30, 99, 0.1)',
+          borderColor: 'rgba(233, 30, 99, 0.3)',
+          textColor: '#E91E63',
           icon: '❌'
         };
       case 'warning':
         return {
-          background: 'rgba(251, 146, 60, 0.15)',
-          borderColor: 'rgba(251, 146, 60, 0.3)',
-          textColor: '#fb923c',
+          background: 'rgba(255, 152, 0, 0.1)',
+          borderColor: 'rgba(255, 152, 0, 0.3)',
+          textColor: '#FF9800',
           icon: '⚠️'
         };
       default:
         return {
-          background: 'rgba(0, 217, 255, 0.15)',
-          borderColor: 'rgba(0, 217, 255, 0.3)',
-          textColor: '#00d9ff',
+          background: 'rgba(33, 150, 243, 0.1)',
+          borderColor: 'rgba(33, 150, 243, 0.3)',
+          textColor: '#2196F3',
           icon: 'ℹ️'
         };
     }

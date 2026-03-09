@@ -22,7 +22,7 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
       {/* Mobile Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 lg:hidden z-40"
+          className="fixed inset-0 bg-black/20 lg:hidden z-40"
           onClick={onClose}
           aria-hidden="true"
         />
@@ -33,8 +33,8 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
         className={`fixed left-0 top-16 h-[calc(100vh-64px)] w-64 transition-transform duration-300 z-40 lg:z-auto lg:relative lg:top-0 lg:h-screen border-r overflow-y-auto`}
         style={{
           transform: isOpen ? 'translateX(0)' : 'translateX(-100%)',
-          background: 'rgba(15, 23, 42, 0.95)',
-          borderColor: 'rgba(0, 217, 255, 0.1)'
+          background: 'rgba(255, 255, 255, 0.95)',
+          borderColor: 'rgba(233, 30, 99, 0.15)'
         }}
         aria-label="Sidebar navigation"
       >
@@ -50,9 +50,9 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
                 activeLink === link.id ? 'opacity-100' : 'opacity-70 hover:opacity-90'
               }`}
               style={{
-                background: activeLink === link.id ? 'rgba(0, 217, 255, 0.15)' : 'transparent',
-                color: activeLink === link.id ? '#00d9ff' : '#cbd5e1',
-                borderLeft: activeLink === link.id ? '3px solid #00d9ff' : 'none',
+                background: activeLink === link.id ? 'rgba(233, 30, 99, 0.1)' : 'transparent',
+                color: activeLink === link.id ? '#E91E63' : '#757575',
+                borderLeft: activeLink === link.id ? '3px solid #E91E63' : 'none',
               }}
               aria-current={activeLink === link.id ? 'page' : undefined}
             >
@@ -64,13 +64,13 @@ export default function Sidebar({ isOpen = true, onClose }: SidebarProps) {
 
         {/* Sidebar Footer */}
         <div className="absolute bottom-0 left-0 right-0 p-6 border-t"
-          style={{borderColor: 'rgba(0, 217, 255, 0.1)'}}>
+          style={{borderColor: 'rgba(233, 30, 99, 0.15)'}}>
           <div className="p-4 rounded-lg"
-            style={{background: 'rgba(0, 217, 255, 0.08)'}}>
-            <p className="text-xs font-semibold" style={{color: '#a5b4fc'}}>
+            style={{background: 'rgba(233, 30, 99, 0.08)'}}>
+            <p className="text-xs font-semibold" style={{color: '#E91E63'}}>
               💡 TIP
             </p>
-            <p className="text-xs mt-2" style={{color: '#cbd5e1'}}>
+            <p className="text-xs mt-2" style={{color: '#757575'}}>
               Use keyboard shortcuts: Ctrl+N to add student
             </p>
           </div>
