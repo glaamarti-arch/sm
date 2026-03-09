@@ -61,7 +61,7 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen" style={{background: 'linear-gradient(135deg, #0a0e27 0%, #1a1f4b 50%, #16213e 100%)'}}>
+    <div className="flex flex-col min-h-screen" style={{background: 'linear-gradient(135deg, #fdf2f7 0%, #fde8f0 50%, #fce7ef 100%)'}}>
       {/* Navbar */}
       <Navbar onSidebarToggle={() => setSidebarOpen(!sidebarOpen)} />
 
@@ -79,14 +79,14 @@ export default function Dashboard() {
               <div 
                 className="rounded-xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%)',
-                  borderColor: 'rgba(0, 217, 255, 0.2)'
+                  background: 'linear-gradient(135deg, rgba(219, 39, 119, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)',
+                  borderColor: 'rgba(219, 39, 119, 0.2)'
                 }}
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-400 text-sm font-bold tracking-wide uppercase">📊 System Status</p>
-                    <p className="text-4xl font-black text-white mt-2">Operational</p>
+                    <p className="text-gray-600 text-sm font-bold tracking-wide uppercase">📊 System Status</p>
+                    <p className="text-4xl font-black" style={{color: '#5b21b6'}} >Operational</p>
                     <p className="text-xs text-gray-500 mt-1">All systems running smoothly</p>
                   </div>
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center shadow-lg border border-green-500/30">
@@ -101,18 +101,18 @@ export default function Dashboard() {
               <div 
                 className="rounded-xl shadow-lg border p-8 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1"
                 style={{
-                  background: 'linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%)',
-                  borderColor: 'rgba(0, 217, 255, 0.2)'
+                  background: 'linear-gradient(135deg, rgba(219, 39, 119, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)',
+                  borderColor: 'rgba(219, 39, 119, 0.2)'
                 }}
               >
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-gray-400 text-sm font-bold tracking-wide uppercase">🗄️ Database</p>
-                    <p className="text-4xl font-black text-white mt-2">SQLite</p>
+                    <p className="text-gray-600 text-sm font-bold tracking-wide uppercase">🗄️ Database</p>
+                    <p className="text-4xl font-black" style={{color: '#5b21b6'}}>SQLite</p>
                     <p className="text-xs text-gray-500 mt-1">Active and responsive</p>
                   </div>
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-cyan-500/20 to-blue-500/20 flex items-center justify-center shadow-lg border border-cyan-500/30">
-                    <svg className="w-8 h-8 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-pink-500/20 to-rose-500/20 flex items-center justify-center shadow-lg border border-rose-500/30">
+                    <svg className="w-8 h-8 text-rose-400" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M5.5 13a3 3 0 01-.369-5.98 4 4 0 117.753-1.3A4.5 4.5 0 1113.5 13H11V9.413l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13H5.5z" />
                     </svg>
                   </div>
@@ -127,14 +127,14 @@ export default function Dashboard() {
             <div 
               className="rounded-xl shadow-lg border overflow-hidden sticky top-24"
               style={{
-                background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
-                borderColor: 'rgba(0, 217, 255, 0.2)'
+                background: '#ffffff',
+                borderColor: 'rgba(219, 39, 119, 0.15)'
               }}
             >
               {/* Form Header */}
               <div 
                 className="p-6 text-white flex items-center gap-3"
-                style={{background: 'linear-gradient(135deg, #00d9ff 0%, #6366f1 100%)'}}
+                style={{background: 'linear-gradient(135deg, #f5a9c8 0%, #a855f7 100%)'}}
               >
                 <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
@@ -154,8 +154,8 @@ export default function Dashboard() {
                     />
                     <button
                       onClick={handleAddNew}
-                      className="w-full mt-6 px-6 py-3 text-gray-300 font-bold rounded-lg hover:bg-gray-700 transition-all duration-200 flex items-center justify-center gap-2 border border-gray-600"
-                      style={{background: 'rgba(255, 255, 255, 0.05)'}}
+                      className="w-full mt-6 px-6 py-3 text-gray-600 font-bold rounded-lg hover:bg-gray-100 transition-all duration-200 flex items-center justify-center gap-2 border border-gray-200"
+                      style={{background: 'rgba(219, 39, 119, 0.05)'}}
                     >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -167,7 +167,7 @@ export default function Dashboard() {
                   <button
                     onClick={handleAddNew}
                     className="w-full px-6 py-4 text-white font-bold rounded-lg transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 text-lg"
-                    style={{background: 'linear-gradient(135deg, #00d9ff 0%, #6366f1 100%)'}}
+                    style={{background: 'linear-gradient(135deg, #f5a9c8 0%, #a855f7 100%)'}}
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
@@ -184,8 +184,8 @@ export default function Dashboard() {
             <div 
               className="rounded-xl shadow-lg border overflow-hidden"
               style={{
-                background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%)',
-                borderColor: 'rgba(0, 217, 255, 0.2)'
+                background: '#ffffff',
+                borderColor: 'rgba(219, 39, 119, 0.15)'
               }}
             >
               <div className="p-6">
@@ -202,12 +202,12 @@ export default function Dashboard() {
         <div 
           className="mt-12 p-6 rounded-xl border text-center"
           style={{
-            background: 'linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(99, 102, 241, 0.08) 100%)',
-            borderColor: 'rgba(0, 217, 255, 0.2)'
+            background: 'linear-gradient(135deg, rgba(219, 39, 119, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%)',
+            borderColor: 'rgba(219, 39, 119, 0.2)'
           }}
         >
-          <p className="text-gray-300 text-sm">
-            <span className="font-bold text-cyan-300">💡 Pro Tip:</span> Press <kbd className="px-2 py-1 bg-slate-700 rounded text-xs">Ctrl+N</kbd> to add a new student, or <kbd className="px-2 py-1 bg-slate-700 rounded text-xs">Esc</kbd> to close the form.
+          <p className="text-gray-700 text-sm">
+            <span className="font-bold" style={{color: '#db2777'}}>💡 Pro Tip:</span> Press <kbd className="px-2 py-1 bg-rose-100 rounded text-xs" style={{color: '#be185d'}}>Ctrl+N</kbd> to add a new student, or <kbd className="px-2 py-1 bg-rose-100 rounded text-xs" style={{color: '#be185d'}}>Esc</kbd> to close the form.
           </p>
         </div>
           </div>

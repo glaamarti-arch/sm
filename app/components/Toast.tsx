@@ -77,28 +77,28 @@ function ToastItem({ toast, onRemove }: { toast: Toast; onRemove: (id: string) =
         return {
           background: 'rgba(52, 211, 153, 0.15)',
           borderColor: 'rgba(52, 211, 153, 0.3)',
-          textColor: '#34d399',
+          textColor: '#059669',
           icon: '✅'
         };
       case 'error':
         return {
           background: 'rgba(239, 68, 68, 0.15)',
           borderColor: 'rgba(239, 68, 68, 0.3)',
-          textColor: '#ef4444',
+          textColor: '#dc2626',
           icon: '❌'
         };
       case 'warning':
         return {
           background: 'rgba(251, 146, 60, 0.15)',
           borderColor: 'rgba(251, 146, 60, 0.3)',
-          textColor: '#fb923c',
+          textColor: '#d97706',
           icon: '⚠️'
         };
       default:
         return {
-          background: 'rgba(0, 217, 255, 0.15)',
-          borderColor: 'rgba(0, 217, 255, 0.3)',
-          textColor: '#00d9ff',
+          background: 'rgba(168, 85, 247, 0.15)',
+          borderColor: 'rgba(168, 85, 247, 0.3)',
+          textColor: '#a855f7',
           icon: 'ℹ️'
         };
     }

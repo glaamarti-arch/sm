@@ -89,18 +89,18 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Personal Information Section */}
-      <div className="rounded-lg p-5 border" style={{background: '#e9d5ff', borderColor: '#fbcfe8'}}>
+      <div className="rounded-lg p-5 border" style={{background: 'rgba(219, 39, 119, 0.08)', borderColor: 'rgba(219, 39, 119, 0.15)'}}>
         <div className="section-header">
-          <svg className="section-header-icon" style={{color: '#ec4899'}} fill="currentColor" viewBox="0 0 20 20">
+          <svg className="section-header-icon" style={{color: '#db2777'}} fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
           </svg>
-          <h3 className="section-header-title" style={{color: '#be185d'}}>Personal Information</h3>
+          <h3 className="section-header-title" style={{color: '#ec4899'}}>Personal Information</h3>
         </div>
 
         {/* Name Row */}
         <div className="grid grid-cols-2 gap-4">
           <div className="form-group">
-            <label htmlFor="firstName" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="firstName" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               First Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -110,14 +110,14 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               value={formData.firstName}
               onChange={handleChange}
               placeholder="John"
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
               required
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="lastName" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="lastName" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               Last Name <span className="text-red-500">*</span>
             </label>
             <input
@@ -127,8 +127,8 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               value={formData.lastName}
               onChange={handleChange}
               placeholder="Doe"
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
               required
             />
           </div>
@@ -136,7 +136,7 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
 
         {/* Email */}
         <div className="form-group">
-          <label htmlFor="email" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+          <label htmlFor="email" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
             Email Address <span className="text-red-500">*</span>
           </label>
           <input
@@ -146,25 +146,25 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
             value={formData.email}
             onChange={handleChange}
             placeholder="john.doe@example.com"
-            className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-            style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+            className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+            style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
             required
           />
         </div>
       </div>
 
       {/* Contact & Location Section */}
-      <div className="rounded-lg p-5 border" style={{background: '#fed7aa', borderColor: '#fbcfe8'}}>
+      <div className="rounded-lg p-5 border" style={{background: 'rgba(219, 39, 119, 0.08)', borderColor: 'rgba(219, 39, 119, 0.15)'}}>
         <div className="section-header">
-          <svg className="section-header-icon" style={{color: '#ea580c'}} fill="currentColor" viewBox="0 0 20 20">
+          <svg className="section-header-icon" style={{color: '#ec4899'}} fill="currentColor" viewBox="0 0 20 20">
             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.418 1.265 1.217 2.541 2.57 3.891 1.353-1.35 2.152-2.626 2.57-3.891l-1.548-.773a1 1 0 01-.54-1.06l.74-4.435A1 1 0 0110.153 2h2.153a1 1 0 011 1v2a1 1 0 11-2 0V4h-.382l-.553 3.276a1 1 0 01-.986.724H8.987a1 1 0 01-.986-.724L7.468 4H7a1 1 0 110-2h2a1 1 0 011 1v10a1 1 0 11-2 0v-10z" />
           </svg>
-          <h3 className="section-header-title" style={{color: '#be185d'}}>Contact & Location</h3>
+          <h3 className="section-header-title" style={{color: '#db2777'}}>Contact & Location</h3>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="form-group">
-            <label htmlFor="phone" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="phone" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               📱 Phone Number
             </label>
             <input
@@ -174,13 +174,13 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+1 (555) 000-0000"
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="dateOfBirth" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="dateOfBirth" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               🎂 Date of Birth
             </label>
             <input
@@ -189,14 +189,14 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               name="dateOfBirth"
               value={formData.dateOfBirth}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
             />
           </div>
         </div>
 
         <div className="form-group">
-          <label htmlFor="address" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+          <label htmlFor="address" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
             📍 Street Address
           </label>
           <input
@@ -206,24 +206,24 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
             value={formData.address}
             onChange={handleChange}
             placeholder="123 Main Street, City, State 12345"
-            className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-            style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+            className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+            style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
           />
         </div>
       </div>
 
       {/* Academic Information Section */}
-      <div className="rounded-lg p-5 border" style={{background: '#d1fae5', borderColor: '#fbcfe8'}}>
+      <div className="rounded-lg p-5 border" style={{background: 'rgba(219, 39, 119, 0.08)', borderColor: 'rgba(219, 39, 119, 0.15)'}}>
         <div className="section-header">
-          <svg className="section-header-icon" style={{color: '#059669'}} fill="currentColor" viewBox="0 0 20 20">
+          <svg className="section-header-icon" style={{color: '#a855f7'}} fill="currentColor" viewBox="0 0 20 20">
             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
           </svg>
-          <h3 className="section-header-title" style={{color: '#be185d'}}>Academic Information</h3>
+          <h3 className="section-header-title" style={{color: '#a855f7'}}>Academic Information</h3>
         </div>
 
         <div className="grid grid-cols-2 gap-4">
           <div className="form-group">
-            <label htmlFor="major" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="major" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               🎓 Major / Program
             </label>
             <input
@@ -233,13 +233,13 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               value={formData.major}
               onChange={handleChange}
               placeholder="Computer Science"
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
             />
           </div>
 
           <div className="form-group">
-            <label htmlFor="status" className="block text-sm font-bold mb-2.5" style={{color: '#be185d'}}>
+            <label htmlFor="status" className="block text-sm font-bold mb-2.5" style={{color: '#6b7280'}}>
               📊 Enrollment Status
             </label>
             <select
@@ -247,8 +247,8 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 rounded-lg transition-all duration-200 font-medium focus:ring-2 focus:ring-pink-300"
-              style={{background: '#ffffff', borderColor: '#fbcfe8', color: '#4b3f5e'}}
+              className="w-full px-4 py-3 border-2 rounded-lg backdrop-blur-md transition-all duration-200 font-medium"
+              style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.2)', color: '#1f2937'}}
             >
               <option value="active" style={{color: '#000000'}}>✅ Active</option>
               <option value="inactive" style={{color: '#000000'}}>⏸️ Inactive</option>
@@ -274,10 +274,10 @@ export default function StudentForm({ student, onSuccess }: StudentFormProps) {
       <button
         type="submit"
         disabled={loading}
-        className="w-full px-6 py-4 text-white font-bold rounded-2xl hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md text-lg tracking-wide flex items-center justify-center gap-2"
+        className="w-full px-6 py-4 text-white font-bold rounded-lg hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200 shadow-md text-lg tracking-wide flex items-center justify-center gap-2"
         style={{
-          background: loading ? '#cbd5e0' : 'linear-gradient(135deg, #ec4899 0%, #db2777 50%, #c084fc 100%)',
-          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.1)' : '0 4px 15px rgba(236, 72, 153, 0.4)'
+          background: loading ? '#cbd5e0' : 'linear-gradient(135deg, #f5a9c8 0%, #ec4899 50%, #c084fc 100%)',
+          boxShadow: loading ? '0 1px 3px rgba(0,0,0,0.1)' : '0 4px 15px rgba(219, 39, 119, 0.3)'
         }}
       >
         {loading && (

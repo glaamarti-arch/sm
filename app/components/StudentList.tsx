@@ -106,12 +106,12 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
       <div className="flex items-center justify-center py-12">
         <div className="text-center">
           <div className="mb-4 flex justify-center">
-            <svg className="animate-spin h-8 w-8" style={{color: '#ec4899'}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <svg className="animate-spin h-8 w-8" style={{color: '#db2777'}} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
               <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
             </svg>
           </div>
-          <p className="text-sm font-medium" style={{color: '#6b3aa0'}}>Loading students...</p>
+          <p className="text-sm font-medium" style={{color: '#9ca3af'}}>Loading students...</p>
         </div>
       </div>
     );
@@ -132,12 +132,12 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
 
   if (students.length === 0) {
     return (
-      <div className="text-center py-12 rounded-lg border" style={{background: '#f9f7f2', borderColor: '#fbcfe8'}}>
+      <div className="text-center py-12 rounded-lg border" style={{background: 'rgba(219, 39, 119, 0.08)', borderColor: 'rgba(219, 39, 119, 0.15)'}}>
         <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="#ec4899" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 6a3 3 0 11-6 0 3 3 0 016 0zM6 20h12a6 6 0 006-6V9a6 6 0 00-6-6H6a6 6 0 00-6 6v5a6 6 0 006 6z" />
         </svg>
         <p className="text-lg font-bold mb-2" style={{color: '#ec4899'}}>No students yet</p>
-        <p className="text-sm" style={{color: '#6b3aa0'}}>Create your first student record to get started!</p>
+        <p className="text-sm" style={{color: '#9ca3af'}}>Create your first student record to get started!</p>
       </div>
     );
   }
@@ -145,22 +145,22 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
   return (
     <div className="space-y-4">
       {/* Header */}
-      <div className="p-5 rounded-lg border" style={{background: '#fff5fb', borderColor: '#fbcfe8'}}>
+      <div className="p-5 rounded-lg border" style={{background: 'rgba(219, 39, 119, 0.08)', borderColor: 'rgba(219, 39, 119, 0.15)'}}>
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             <svg className="w-6 h-6" style={{color: '#ec4899'}} fill="currentColor" viewBox="0 0 20 20">
               <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
             </svg>
-            <h2 className="text-xl font-bold" style={{color: '#be185d'}}>Student Records</h2>
+            <h2 className="text-xl font-bold" style={{color: '#ec4899'}}>Student Records</h2>
           </div>
-          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold text-white" style={{background: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)'}}>
+          <span className="inline-flex items-center px-4 py-2 rounded-full text-sm font-bold text-white" style={{background: 'linear-gradient(135deg, #f5a9c8 0%, #ec4899 100%)'}}>
             📊 {filteredStudents.length} {filteredStudents.length === 1 ? 'result' : 'results'}
           </span>
         </div>
 
         {/* Search Box */}
         <div className="relative">
-          <svg className="absolute left-3 top-3 w-5 h-5" style={{color: '#c084fc'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="absolute left-3 top-3 w-5 h-5" style={{color: '#9ca3af'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -168,11 +168,11 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
             placeholder="Search by name, email, or major..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-lg border-2 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-pink-300"
+            className="w-full pl-10 pr-4 py-2 rounded-lg border-2 transition-all duration-200 focus:outline-none"
             style={{
-              background: '#ffffff',
-              borderColor: '#fbcfe8',
-              color: '#4b3f5e'
+              background: 'rgba(219, 39, 119, 0.05)',
+              borderColor: 'rgba(219, 39, 119, 0.2)',
+              color: '#1f2937'
             }}
             aria-label="Search students"
           />
@@ -180,53 +180,53 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
       </div>
 
       {/* Table Container */}
-      <div className="overflow-hidden rounded-lg border" style={{borderColor: '#fbcfe8', boxShadow: '0 4px 15px rgba(236, 72, 153, 0.1)'}}>
+      <div className="overflow-hidden rounded-lg border" style={{borderColor: 'rgba(219, 39, 119, 0.2)', boxShadow: '0 4px 15px rgba(219, 39, 119, 0.08)'}}>
         <table className="w-full">
           {/* Table Head */}
           <thead>
-            <tr style={{background: '#fff5fb'}}>
+            <tr style={{background: 'rgba(219, 39, 119, 0.1)'}}>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>👤 Name</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>👤 Name</span>
               </th>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>📧 Email</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>📧 Email</span>
               </th>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>📱 Phone</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>📱 Phone</span>
               </th>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>🎓 Major</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>🎓 Major</span>
               </th>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>📍 Status</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>📍 Status</span>
               </th>
               <th className="px-6 py-4 text-left">
-                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#ec4899'}}>⚙️ Actions</span>
+                <span className="text-xs font-bold uppercase tracking-wider" style={{color: '#5b21b6'}}>⚙️ Actions</span>
               </th>
             </tr>
           </thead>
 
           {/* Table Body */}
-          <tbody style={{borderColor: '#fbcfe8'}}>
+          <tbody style={{borderColor: 'rgba(219, 39, 119, 0.1)'}}>
             {paginatedStudents.map((student, index) => (
               <tr 
                 key={student.id} 
                 className="transition-all duration-200"
                 style={{
-                  background: index % 2 === 0 ? '#ffffff' : '#fff5fb',
-                  borderBottom: '1px solid #fbcfe8'
+                  background: index % 2 === 0 ? 'rgba(219, 39, 119, 0.03)' : 'rgba(219, 39, 119, 0.06)',
+                  borderBottom: '1px solid rgba(219, 39, 119, 0.1)'
                 }}
               >
                 <td className="px-6 py-4">
                   <div className="flex items-center gap-3">
                     <div 
                       className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md"
-                      style={{background: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)'}}
+                      style={{background: 'linear-gradient(135deg, #f5a9c8 0%, #ec4899 100%)'}}
                     >
                       {student.firstName[0]}{student.lastName[0]}
                     </div>
                     <div>
-                      <p className="font-bold" style={{color: '#4b3f5e'}}>
+                      <p className="font-bold" style={{color: '#1f2937'}}>
                         {student.firstName} {student.lastName}
                       </p>
                       <p className="text-xs" style={{color: '#9ca3af'}}>ID: #{student.id}</p>
@@ -234,13 +234,13 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
                   </div>
                 </td>
                 <td className="px-6 py-4">
-                  <p className="text-sm font-medium" style={{color: '#4b3f5e'}}>{student.email}</p>
+                  <p className="text-sm font-medium" style={{color: '#1f2937'}}>{student.email}</p>
                 </td>
                 <td className="px-6 py-4">
                   <p className="text-sm" style={{color: '#6b7280'}}>{student.phone || '—'}</p>
                 </td>
                 <td className="px-6 py-4">
-                  <p className="text-sm font-medium" style={{color: '#4b3f5e'}}>{student.major || '—'}</p>
+                  <p className="text-sm font-medium" style={{color: '#1f2937'}}>{student.major || '—'}</p>
                 </td>
                 <td className="px-6 py-4">
                   <span className={`inline-flex items-center px-3 py-1.5 rounded-full text-xs font-bold`} style={{
@@ -260,7 +260,7 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
                       onClick={() => onEdit(student)}
                       className="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg font-semibold text-sm transition-all duration-200 hover:shadow-md text-white"
                       style={{
-                        background: 'linear-gradient(135deg, #ec4899 0%, #db2777 100%)'
+                        background: 'linear-gradient(135deg, #f5a9c8 0%, #ec4899 100%)'
                       }}
                     >
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -291,8 +291,8 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between p-4 rounded-lg border"
-          style={{background: 'rgba(0, 217, 255, 0.05)', borderColor: 'rgba(0, 217, 255, 0.1)'}}>
-          <p className="text-sm" style={{color: '#cbd5e1'}}>
+          style={{background: 'rgba(219, 39, 119, 0.05)', borderColor: 'rgba(219, 39, 119, 0.1)'}}>
+          <p className="text-sm" style={{color: '#6b7280'}}>
             Page {currentPage} of {totalPages} • Showing {paginatedStudents.length} of {filteredStudents.length} students
           </p>
           <div className="flex gap-2">
@@ -300,7 +300,7 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
               onClick={() => setCurrentPage(prev => Math.max(1, prev - 1))}
               disabled={currentPage === 1}
               className="px-3 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{color: '#00d9ff', background: 'rgba(0, 217, 255, 0.1)'}}
+              style={{color: '#ec4899', background: 'rgba(219, 39, 119, 0.1)'}}
             >
               ← Previous
             </button>
@@ -308,7 +308,7 @@ export default function StudentList({ onEdit, refreshTrigger }: StudentListProps
               onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
               disabled={currentPage === totalPages}
               className="px-3 py-2 rounded-lg font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              style={{color: '#00d9ff', background: 'rgba(0, 217, 255, 0.1)'}}
+              style={{color: '#ec4899', background: 'rgba(219, 39, 119, 0.1)'}}
             >
               Next →
             </button>
